@@ -1,6 +1,8 @@
 SpreeSupplier
 ================
 
+**This is very much work in progress. It may burn your house down or kick your dog if you aren't careful.**
+
 A Spree extension to add the concept of product suppliers. Suppliers allows a Spree store to keep catalogs from many Suppliers. A Spree store owner can select from the StockOffers provided by the Suppliers to add product to the Spree store.
 
 Installation
