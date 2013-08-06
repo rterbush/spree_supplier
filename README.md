@@ -11,7 +11,7 @@ Installation
 Add spree_supplier to your Gemfile:
 
 ```ruby
-gem 'spree_supplier'
+gem 'spree_supplier', :github => 'rterbush/spree_supplier', :branch => 'master'
 ```
 
 Bundle your dependencies and run the installation generator:
@@ -19,6 +19,8 @@ Bundle your dependencies and run the installation generator:
 ```shell
 bundle
 bundle exec rails g spree_supplier:install
+bundle exec rake railties:install:migrations
+bundle exec rake db:migrate
 ```
 
 Testing
