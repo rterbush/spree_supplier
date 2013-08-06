@@ -5,6 +5,8 @@ module Spree
     has_many :stock_offers
 
     belongs_to :variant, class_name: 'Spree::Variant'
+    belongs_to :state, class_name: 'Spree::State'
+    belongs_to :country, class_name: 'Spree::Country'
 
     validates_presence_of :name
 

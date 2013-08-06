@@ -1,0 +1,50 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+  <%= Spree.t(:suppliers) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <ul class="actions inline-menu">
+    <li>
+      <%= button_link_to Spree.t(:new_supplier), new_object_url, { :icon => 'icon-plus', :id => 'admin_new_stock_location' } %>
+    </li>
+  </ul>
+<% end %>
+
+<% if @suppliers.any? %>
+  <table class="index" id='listing_stock_locations' data-hook>
+    <colgroup>
+      <col style="width: 50%" />
+      <col style="width: 15%" />
+      <col style="width: 20%" />
+      <col style="width: 15%" />
+    </colgroup>
+    <thead>
+      <tr data-hook="stock_locations_header">
+        <th><%= Spree.t(:name) %></th>
+        <th><%= Spree.t(:state) %></th>
+        <th><%= Spree.t(:stock_locations) %></th>
+        <th class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @suppliers.each do |supplier|
+           @edit_url = edit_admin_supplier_path(supplier)
+           @delete_url = admin_suppliers_path(supplier)
+      %>
+        <tr id="<%= spree_dom_id supplier %>" data-hook="stock_location_row" class="<%= cycle('odd', 'even')%>">
+          <td><%= supplier.name %></td>
+          <td><span class="state <%= supplier.active? ? 'active' : 'inactive' %>"><%= supplier.active? ? 'active' : 'inactive' %></span></td>
+          <td><%= link_to Spree.t(:stock_locations), admin_stock_locations_path(supplier.id) %> </td>
+          <td class="actions">
+            <%= link_to_edit supplier, :no_text => true %>
+            <%= link_to_delete supplier, :no_text => true %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alpha twelve columns no-objects-found"><%= Spree.t(:no_suppliers_found) %></div>
+<% end %>

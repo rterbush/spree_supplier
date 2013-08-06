@@ -2,4 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+      attributes:
+        spree/supplier:
+        name: Name
+  spree:
+    back_to_supplier_list: Back To Supplier List
+    manage_suppliers: Manage Suppliers
+    no_suppliers_found: No Suppliers Found
+    new_supplier: New Supplier
+    supplier: Supplier
+    suppliers: Suppliers

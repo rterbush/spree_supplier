@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:editing_supplier) %> <i class="icon-arrow-right"></i>
+  <%= @supplier.name %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= link_to_with_icon 'icon-arrow-left', Spree.t(:back_to_supplier_list), admin_suppliers_path, :class => 'button' %></li>
+<% end %>
+
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @supplier } %>
+
+<%= form_for [:admin, @supplier] do |f| %>
+  <fieldset class="no-border-top">
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+  </fieldset>
+<% end %>
