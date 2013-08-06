@@ -1,6 +1,6 @@
-class CreateTableSpreeStockOffer < ActiveRecord::Migration
+class CreateTableSpreeStockOffers < ActiveRecord::Migration
   def change
-    create_table  "spree_stock_offer", :force => true do |t|
+    create_table  "spree_stock_offers", :force => true do |t|
       t.integer   "supplier_id"
       t.string    "sku",           :default => "",    :null => false
       t.decimal   "weight",        :precision => 8, :scale => 2
@@ -38,9 +38,9 @@ class CreateTableSpreeStockOffer < ActiveRecord::Migration
       t.integer   "count"
     end
 
-    add_index "spree_catalogs", ["gtin"], :name => "index_spree_catalogs_on_gtin"
-    add_index "spree_catalogs", ["distributor_id"], :name => "index_spree_catalogs_on_distributor_id"
-    add_index "spree_catalogs", ["sku"], :name => "index_spree_catalogs_on_sku"
+    add_index "spree_stock_offers", ["gtin"], :name => "index_spree_stock_offers_on_gtin"
+    add_index "spree_stock_offers", ["supplier_id"], :name => "index_spree_stock_offers_on_supplier_id"
+    add_index "spree_stock_offers", ["sku"], :name => "index_spree_stock_offers_on_sku"
   end
 end
 
