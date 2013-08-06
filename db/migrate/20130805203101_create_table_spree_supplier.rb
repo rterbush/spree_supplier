@@ -1,6 +1,6 @@
 class CreateTableSpreeSupplier < ActiveRecord::Migration
   def change
-    create_table "spree_supplier", :force => true do |t|
+    create_table "spree_suppliers", :force => true do |t|
         t.string    "name"
         t.string    "abbr"
         t.string    "image_url"
