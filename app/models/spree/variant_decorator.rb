@@ -1,7 +1,7 @@
 module Spree
   Variant.class_eval do
 
-    has_one :distributor
+    has_many :suppliers, through: :stock_offers
 
   end
 end
