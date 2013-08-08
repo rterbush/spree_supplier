@@ -8,8 +8,10 @@ en:
         name: Name
   spree:
     back_to_supplier_list: Back To Supplier List
+    descriptions: Descriptions
     manage_suppliers: Manage Suppliers
     no_suppliers_found: No Suppliers Found
     new_supplier: New Supplier
     supplier: Supplier
     suppliers: Suppliers
+
