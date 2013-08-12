@@ -1,7 +1,11 @@
 module Spree
   Variant.class_eval do
 
-    has_many :suppliers, through: :stock_offers
+    belongs_to :supplier
+    attr_accessible :supplier_id
 
+    def supplier?
+      supplier.present?
+    end
   end
 end
